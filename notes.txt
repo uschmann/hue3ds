@@ -1,0 +1,24 @@
+
+http://192.168.1.204/api
+[
+    {
+        "error": {
+            "type": 101,
+            "address": "",
+            "description": "link button not pressed"
+        }
+    }
+]
+
+[
+    {
+        "success": {
+            "username": "qzkfZoi7znr4dpoMz876XW6Oz2LzBfjhVVqWLVGa"
+        }
+    }
+]
+
+http://192.168.1.204/api/qzkfZoi7znr4dpoMz876XW6Oz2LzBfjhVVqWLVGa/lights
+
+PUT http://192.168.1.204/api/qzkfZoi7znr4dpoMz876XW6Oz2LzBfjhVVqWLVGa/lights/6/state
+{"on":true, "sat":254, "bri":254,"hue":10000}
