@@ -9,6 +9,10 @@ Hue::Hue() {
     ip = NULL;
 }
 
+void Hue::setUser(char * user) {
+    this->user = user;
+}
+
 char * Hue::discoverByNupnp() {
     HttpResponse * response = mHttpClient->get("https://www.meethue.com/api/nupnp");
 
@@ -33,5 +37,21 @@ char * Hue::registerUser() {
     
     HttpResponse * response = mHttpClient->post(url, "{\"devicetype\":\"hue3ds#3ds\"}");
 
-    return response->data;
+    cJSON *json = cJSON_Parse(response->data);
+    cJSON *obj = cJSON_GetArrayItem(json, 0);
+    if(cJSON_HasObjectItem(obj, "error")) {
+        delete response;
+        cJSON_free(json);
+        return NULL;
+    }
+
+    cJSON *success = cJSON_GetObjectItem(obj, "success");
+    cJSON *username = cJSON_GetObjectItem(success, "username");
+    char * user = cJSON_GetStringValue(username);
+    
+    delete response;
+    cJSON_free(json);
+
+    return user;
 }
+
