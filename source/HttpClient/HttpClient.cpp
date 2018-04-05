@@ -1,4 +1,5 @@
-#include "include/HttpClient/HttpClient.h"
+#include <HttpClient/HttpClient.h>
+#include <HttpClient/HttpResponse.h>
 
 #include <3ds.h>
 #include <stdio.h>
@@ -29,7 +30,7 @@ char * HttpClient::downloadRepsponse(httpcContext *context) {
     return  (char *) buf;
 }
 
-char * HttpClient::get(const char *url) {
+HttpResponse * HttpClient::get(const char *url) {
     Result ret = 0;
     httpcContext context;
     u32 statuscode;
@@ -43,10 +44,31 @@ char * HttpClient::get(const char *url) {
 
     char * result = this->downloadRepsponse(&context);
     httpcCloseContext(&context);
-    return result;
+
+    return new HttpResponse(statuscode, result);
 }
 
-char * HttpClient::put(const char *url, const char* data) {
+HttpResponse * HttpClient::post(const char *url, const char* data) {
+    Result ret = 0;
+    httpcContext context;
+    u32 statuscode;
+
+    ret = httpcOpenContext(&context, HTTPC_METHOD_POST, url, 0);
+    ret = httpcSetSSLOpt(&context, SSLCOPT_DisableVerify);
+    ret = httpcAddRequestHeaderField(&context, "Connection", "Keep-Alive");
+    ret = httpcAddRequestHeaderField(&context, "User-Agent", "httpc-example/1.0.0");
+    ret = httpcAddRequestHeaderField(&context, "Content-Type", "application/json");
+    ret = httpcAddPostDataRaw(&context, (u32*)data, strlen(data));
+
+    ret = httpcBeginRequest(&context);
+    ret = httpcGetResponseStatusCode(&context, &statuscode);
+
+    char * result = this->downloadRepsponse(&context);
+    httpcCloseContext(&context);
+    return new HttpResponse(statuscode, result);;
+}
+
+HttpResponse * HttpClient::put(const char *url, const char* data) {
     Result ret = 0;
     httpcContext context;
     u32 statuscode;
@@ -63,5 +85,5 @@ char * HttpClient::put(const char *url, const char* data) {
 
     char * result = this->downloadRepsponse(&context);
     httpcCloseContext(&context);
-    return result;
+    return new HttpResponse(statuscode, result);;
 }

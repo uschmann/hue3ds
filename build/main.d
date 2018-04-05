@@ -72,9 +72,11 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/sdmc.h \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/romfs.h \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/font.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/include/HttpClient/HttpClient.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/include/FileSystem.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/cJson.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Hue.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpClient.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpResponse.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h
 
 /Users/andreuschmann/devkitPro/libctru/include/3ds.h:
 
@@ -222,8 +224,12 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
 
 /Users/andreuschmann/devkitPro/libctru/include/3ds/font.h:
 
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/include/HttpClient/HttpClient.h:
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Hue.h:
 
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/include/FileSystem.h:
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpClient.h:
 
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/cJson.h:
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpResponse.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h:
