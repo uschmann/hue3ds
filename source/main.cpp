@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "HttpClient/HttpClient.h"
+#include "include/HttpClient/HttpClient.h"
+#include "include/FileSystem.h"
 
 #include "cJson.h"
 
@@ -15,8 +16,9 @@ int main(int argc, char **argv)
 
 	HttpClient *client = new HttpClient();
 	char * result = NULL;
-	
-	printf(result);
+
+	char * text = FileSystem::readTextFile("test.txt");
+	printf(text);
 
 	// Main loop
 	while (aptMainLoop())

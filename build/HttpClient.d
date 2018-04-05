@@ -1,6 +1,6 @@
 HttpClient.o: \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/HttpClient.cpp \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/HttpClient/HttpClient.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/include/HttpClient/HttpClient.h \
  /Users/andreuschmann/devkitPro/libctru/include/3ds.h \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/types.h \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/result.h \
@@ -75,7 +75,7 @@ HttpClient.o: \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/romfs.h \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/font.h
 
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/HttpClient/HttpClient.h:
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/include/HttpClient/HttpClient.h:
 
 /Users/andreuschmann/devkitPro/libctru/include/3ds.h:
 

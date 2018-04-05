@@ -1,5 +1,8 @@
 #include <3ds.h>
 
+#ifndef HttpClient__h
+#define HttpClient__h
+
 class HttpClient {
     public:
         char * get(const char *url);
@@ -7,3 +10,5 @@ class HttpClient {
     protected:
         char * downloadRepsponse(httpcContext *context);
 };
+
+#endif
