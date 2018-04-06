@@ -1,4 +1,5 @@
 #include <Hue/Hue.h>
+#include <Hue/Light.h>
 #include <HttpClient/HttpClient.h>
 #include <HttpClient/HttpResponse.h>
 #include <cJson.h>
@@ -7,6 +8,7 @@
 Hue::Hue() {
     mHttpClient = new HttpClient();
     ip = NULL;
+    user = NULL;
 }
 
 void Hue::setUser(char * user) {
@@ -55,3 +57,18 @@ char * Hue::registerUser() {
     return user;
 }
 
+vector<Light> * Hue::getLights() {
+    vector<Light> * lights = new vector<Light>;
+
+    char url[100];
+    sprintf(url, "http://%s/api/%s/lights", this->ip, this->user);
+    HttpResponse * response = mHttpClient->get(url);
+
+    cJSON * json = cJSON_Parse(response->data);
+    cJSON * light = NULL;
+    cJSON_ArrayForEach(light, json) {
+        lights->push_back(*Light::fromJson(light));
+    }
+
+    return lights;
+}

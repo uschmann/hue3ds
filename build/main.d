@@ -75,8 +75,12 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Hue.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpClient.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpResponse.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/state.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJSON.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h
 
 /Users/andreuschmann/devkitPro/libctru/include/3ds.h:
 
@@ -230,6 +234,14 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpResponse.h:
 
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h:
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/state.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJSON.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h:

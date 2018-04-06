@@ -3,8 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Hue/Hue.h>
+#include <Hue/Light.h>
 #include <FileSystem.h>
 #include <cJson.h>
+#include <vector>
+
+using namespace std;
 
 int main(int argc, char **argv)
 {
@@ -19,8 +23,25 @@ int main(int argc, char **argv)
 	Hue *hue = new Hue();
 	printf("%s\n", hue->discoverByNupnp());
 	char * username = FileSystem::readTextFile("hue.txt");
-	printf("%s\n", username);
+	printf("User: %s\n", username);
 	hue->setUser(username);
+
+	vector<Light> * lights = hue->getLights();
+	printf("Found %i \n", lights->size());
+	for(int i = 0; i < lights->size(); i++) {
+		printf("Id: %s\n", lights->at(i).id);
+		printf("Name: %s\n", lights->at(i).name);
+		printf("Type: %s\n", lights->at(i).type);
+		printf("ModelId: %s\n", lights->at(i).modelid);
+		printf("swversion: %s\n", lights->at(i).swversion);
+		if(lights->at(i).state->on) {
+			printf("ON\n");
+		}
+		else {
+			printf("OFF\n");
+		}
+		printf("--------------------");
+	}
 
 	// Main loop
 	while (aptMainLoop())

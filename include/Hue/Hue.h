@@ -3,6 +3,10 @@
 #define Hue__H
 
 #include <HttpClient/HttpClient.h>
+#include <vector>
+#include "Light.h"
+
+using namespace std;
 
 class Hue {
     public:
@@ -10,6 +14,9 @@ class Hue {
         char * discoverByNupnp();
         void setUser(char * user);
         char * registerUser();
+
+        vector<Light> * getLights();
+        
     protected:
         HttpClient *mHttpClient;
         char * ip;
