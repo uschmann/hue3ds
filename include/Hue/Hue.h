@@ -22,6 +22,7 @@ class Hue {
         bool setColorXy(char *id, double x, double y);
 
         vector<Group> * getGroups();
+        bool setGroupOnState(char * id, bool state);
     protected:
         HttpClient *mHttpClient;
         char * ip;

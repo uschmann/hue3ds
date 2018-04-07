@@ -61,10 +61,10 @@ int main(int argc, char **argv)
 			hue->setColorRgb(light.id, 0, 0, 1);
 		}
 		if (kDown & KEY_A) {
-			hue->setOnState(light.id, true);
+			hue->setGroupOnState(groups->at(0).id, true);
 		}
 		if (kDown & KEY_B) {
-			hue->setOnState(light.id, false);
+			hue->setGroupOnState(groups->at(0).id, false);
 		}
 
 		// Flush and swap framebuffers
