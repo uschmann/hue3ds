@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 
 	vector<Light> * lights = hue->getLights();
 	int currentLight = 0;
-	Light * light = &lights->at(0);
+	Light light = lights->at(0);
 
 	// Main loop
 	while (aptMainLoop())
@@ -41,22 +41,25 @@ int main(int argc, char **argv)
 			if(currentLight < 0) {
 				currentLight = lights->size()-1;
 			}
-			light = &lights->at(currentLight);
-			light->print();
+			light = lights->at(currentLight);
+			light.print();
 		}
 		if (kDown & KEY_RIGHT) {
 			currentLight ++;
 			if(currentLight == lights->size()) {
 				currentLight = 0;
 			}
-			light = &lights->at(currentLight);
-			light->print();
+			light = lights->at(currentLight);
+			light.print();
+		}
+		if (kDown & KEY_X) {
+			hue->setColorRgb(light.id, 0, 0, 1);
 		}
 		if (kDown & KEY_A) {
-			hue->setOnState(light->id, true);
+			hue->setOnState(light.id, true);
 		}
 		if (kDown & KEY_B) {
-			hue->setOnState(light->id, false);
+			hue->setOnState(light.id, false);
 		}
 
 		// Flush and swap framebuffers

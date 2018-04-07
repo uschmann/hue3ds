@@ -17,6 +17,8 @@ class Hue {
 
         vector<Light> * getLights();
         bool setOnState(char * id, bool state);
+        bool setColorRgb(char *id, double red, double green, double blue);
+        bool setColorXy(char *id, double x, double y);
     protected:
         HttpClient *mHttpClient;
         char * ip;
