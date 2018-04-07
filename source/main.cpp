@@ -25,6 +25,11 @@ int main(int argc, char **argv)
 	int currentLight = 0;
 	Light light = lights->at(0);
 
+	vector<Group> * groups = hue->getGroups();
+	printf("Groups %d \n", groups->size());
+	printf("name %s \n", groups->at(0).name);
+	printf("name %s \n", groups->at(1).name);
+
 	// Main loop
 	while (aptMainLoop())
 	{	

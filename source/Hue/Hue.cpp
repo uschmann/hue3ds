@@ -133,3 +133,22 @@ bool Hue::setColorRgb(char *id, double red, double green, double blue) {
 
     return this->setColorXy(id, cx, cy);
 }
+
+vector<Group> * Hue::getGroups() {
+    vector<Group> * groups = new vector<Group>;
+
+    char url[100];
+    sprintf(url, "http://%s/api/%s/groups", this->ip, this->user);
+    HttpResponse * response = mHttpClient->get(url);
+
+    cJSON * json = cJSON_Parse(response->data);
+    cJSON * group = NULL;
+    cJSON_ArrayForEach(group, json) {
+        groups->push_back(*Group::fromJson(group));
+    }
+
+    cJSON_free(json);
+    delete response;
+
+    return groups;
+}

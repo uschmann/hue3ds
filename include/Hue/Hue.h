@@ -5,6 +5,7 @@
 #include <HttpClient/HttpClient.h>
 #include <vector>
 #include "Light.h"
+#include "Group.h"
 
 using namespace std;
 
@@ -19,6 +20,8 @@ class Hue {
         bool setOnState(char * id, bool state);
         bool setColorRgb(char *id, double red, double green, double blue);
         bool setColorXy(char *id, double x, double y);
+
+        vector<Group> * getGroups();
     protected:
         HttpClient *mHttpClient;
         char * ip;
