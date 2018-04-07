@@ -69,6 +69,9 @@ vector<Light> * Hue::getLights() {
     cJSON_ArrayForEach(light, json) {
         lights->push_back(*Light::fromJson(light));
     }
+    
+    cJSON_free(json);
+    delete response;
 
     return lights;
 }

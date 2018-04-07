@@ -28,19 +28,9 @@ int main(int argc, char **argv)
 
 	vector<Light> * lights = hue->getLights();
 	printf("Found %i \n", lights->size());
+	lights->at(0).print();
 	for(int i = 0; i < lights->size(); i++) {
-		printf("Id: %s\n", lights->at(i).id);
-		printf("Name: %s\n", lights->at(i).name);
-		printf("Type: %s\n", lights->at(i).type);
-		printf("ModelId: %s\n", lights->at(i).modelid);
-		printf("swversion: %s\n", lights->at(i).swversion);
-		if(lights->at(i).state->on) {
-			printf("ON\n");
-		}
-		else {
-			printf("OFF\n");
-		}
-		printf("--------------------");
+	//	lights->at(i).print();
 	}
 
 	// Main loop
