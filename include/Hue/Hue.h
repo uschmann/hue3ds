@@ -16,7 +16,7 @@ class Hue {
         char * registerUser();
 
         vector<Light> * getLights();
-        
+        bool setOnState(char * id, bool state);
     protected:
         HttpClient *mHttpClient;
         char * ip;

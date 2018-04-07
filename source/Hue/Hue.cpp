@@ -69,9 +69,27 @@ vector<Light> * Hue::getLights() {
     cJSON_ArrayForEach(light, json) {
         lights->push_back(*Light::fromJson(light));
     }
-    
+
     cJSON_free(json);
     delete response;
 
     return lights;
+}
+
+bool Hue::setOnState(char * id, bool state) {
+    HttpResponse * response = NULL;
+    char url[100];
+    sprintf(url, "http://%s/api/%s/lights/%s/state", this->ip, this->user, id);
+
+    if(state) {
+        response = mHttpClient->put(url, "{\"on\":true}");
+    }
+    else {
+        response = mHttpClient->put(url, "{\"on\":false}");
+    }
+
+    bool success = response->statuscode == 200;
+    delete response;
+
+    return success;
 }

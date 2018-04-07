@@ -17,21 +17,13 @@ int main(int argc, char **argv)
 	//Initialize console on top screen. Using NULL as the second argument tells the console library to use the internal console structure as current one
 	consoleInit(GFX_TOP, NULL);
 
-	HttpClient * client = new HttpClient();
-	HttpResponse * response = NULL;
-
 	Hue *hue = new Hue();
-	printf("%s\n", hue->discoverByNupnp());
-	char * username = FileSystem::readTextFile("hue.txt");
-	printf("User: %s\n", username);
-	hue->setUser(username);
+	hue->discoverByNupnp();
+	hue->setUser(FileSystem::readTextFile("hue.txt"));
 
 	vector<Light> * lights = hue->getLights();
-	printf("Found %i \n", lights->size());
-	lights->at(0).print();
-	for(int i = 0; i < lights->size(); i++) {
-	//	lights->at(i).print();
-	}
+	int currentLight = 0;
+	Light * light = &lights->at(0);
 
 	// Main loop
 	while (aptMainLoop())
@@ -44,23 +36,27 @@ int main(int argc, char **argv)
 
 		if (kDown & KEY_START) break; // break in order to return to hbmenu
 
+		if (kDown & KEY_LEFT) {
+			currentLight --;
+			if(currentLight < 0) {
+				currentLight = lights->size()-1;
+			}
+			light = &lights->at(currentLight);
+			light->print();
+		}
+		if (kDown & KEY_RIGHT) {
+			currentLight ++;
+			if(currentLight == lights->size()) {
+				currentLight = 0;
+			}
+			light = &lights->at(currentLight);
+			light->print();
+		}
 		if (kDown & KEY_A) {
-			char url[255];
-			sprintf(url, "http://192.168.1.204/api/%s/lights/6/state", username);
-			response = client->put(url, "{\"on\":true}");
-			
-			printf("statuscode: %d\n", response->statuscode);
-			printf(response->data);
-			delete response;
+			hue->setOnState(light->id, true);
 		}
 		if (kDown & KEY_B) {
-			char url[255];
-			sprintf(url, "http://192.168.1.204/api/%s/lights/6/state", username);
-			response = client->put(url, "{\"on\":false}");
-			
-			printf("statuscode: %d\n", response->statuscode);
-			printf(response->data);
-			delete response;
+			hue->setOnState(light->id, false);
 		}
 
 		// Flush and swap framebuffers
