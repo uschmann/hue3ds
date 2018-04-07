@@ -102,7 +102,6 @@ bool Hue::setColorXy(char * id, double x, double y) {
 
     char json[100];
     sprintf(json, "{\"xy\":[%.6f, %.6f]}", x, y);
-    printf(json);
     response = mHttpClient->put(url, json);
 
     bool success = response->statuscode == 200;
