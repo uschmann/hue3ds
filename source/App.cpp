@@ -27,7 +27,8 @@ App * App::getInstance() {
 
 void App::init() {
     SDL_Init(SDL_INIT_VIDEO);
-
+    SDL_ShowCursor(false);
+    
     int screenFlags = SDL_SWSURFACE | SDL_BOTTOMSCR | SDL_CONSOLETOP;
 	this->screen = SDL_SetVideoMode(BOTTOMSCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, screenFlags);
 	httpcInit(4 * 1024 * 1024); 
@@ -60,6 +61,9 @@ void App::run() {
         }
 
 		// Do something here...
+        if(this->controller != NULL) {
+            this->controller->onDraw(this->screen);
+        }
 		SDL_Flip(this->screen);
 	}
     

@@ -3,7 +3,9 @@
 
 #include <Controller/Controller.h>
 #include <Hue/Light.h>
+#include <View/LightListItem.h>
 #include <vector>
+
 
 using namespace std;
 
@@ -15,6 +17,7 @@ class LightListController: public Controller {
         void onRemove();
     protected:
         vector<Light> * lights;
+        vector<LightListItem> * lightListItems;
 };
 
 #endif

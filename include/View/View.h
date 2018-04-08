@@ -9,6 +9,7 @@ class View {
         View(int x, int y, int width, int height);
         virtual void draw(SDL_Surface * screen);
         virtual bool handleEvent(SDL_Event * event);
+        bool isClicked(SDL_MouseButtonEvent * event);
     protected:
         int x;
         int y;

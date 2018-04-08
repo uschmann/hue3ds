@@ -11,6 +11,8 @@ class LightListItem: public View {
         LightListItem(Light * light, int x, int y, int width, int height);
         void draw(SDL_Surface * screen);
         bool handleEvent(SDL_Event * event);
+    protected:
+        Light * light;
 };
 
 #endif

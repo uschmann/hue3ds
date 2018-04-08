@@ -24,3 +24,8 @@ void View::draw(SDL_Surface * screen) {
 bool View::handleEvent(SDL_Event * event) {
     return false;
 }
+
+bool View::isClicked(SDL_MouseButtonEvent * event) {
+    return event->x >= this-> x && event->x <= this->x + this->width &&
+        event->y >= this->y && event->y <= this->y + this->height;
+}

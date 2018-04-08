@@ -110,7 +110,9 @@ LightListController.o: \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJSON.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/LightListItem.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightListController.h:
 
@@ -333,3 +335,7 @@ LightListController.o: \
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/LightListItem.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h:
