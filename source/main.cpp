@@ -58,7 +58,10 @@ int main(int argc, char **argv)
 			light.print();
 		}
 		if (kDown & KEY_X) {
-			hue->setColorRgb(light.id, 0, 0, 1);
+			hue->setGroupColorRgb(groups->at(0).id, 1, 0, 0);
+		}
+		if (kDown & KEY_Y) {
+			hue->setGroupColorRgb(groups->at(0).id, 0, 0, 1);
 		}
 		if (kDown & KEY_A) {
 			hue->setGroupOnState(groups->at(0).id, true);

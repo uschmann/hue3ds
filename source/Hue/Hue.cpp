@@ -169,3 +169,41 @@ bool Hue::setGroupOnState(char * id, bool state) {
 
     return success;
 }
+
+bool Hue::setGroupColorXy(char * id, double x, double y) {
+    HttpResponse * response = NULL;
+    char url[100];
+    sprintf(url, "http://%s/api/%s/groups/%s/action", this->ip, this->user, id);
+
+    char json[100];
+    sprintf(json, "{\"xy\":[%.6f, %.6f]}", x, y);
+    response = mHttpClient->put(url, json);
+
+    bool success = response->statuscode == 200;
+    delete response;
+
+    return success;
+}
+
+bool Hue::setGroupColorRgb(char *id, double red, double green, double blue) {
+    float r = (red   > 0.04045f) ? pow((red   + 0.055f) / (1.0f + 0.055f), 2.4f) : (red   / 12.92f);
+    float g = (green > 0.04045f) ? pow((green + 0.055f) / (1.0f + 0.055f), 2.4f) : (green / 12.92f);
+    float b = (blue  > 0.04045f) ? pow((blue  + 0.055f) / (1.0f + 0.055f), 2.4f) : (blue  / 12.92f);
+
+    float X = r * 0.664511f + g * 0.154324f + b * 0.162028f;
+    float Y = r * 0.283881f + g * 0.668433f + b * 0.047685f;
+    float Z = r * 0.000088f + g * 0.072310f + b * 0.986039f;
+
+    float cx = X / (X + Y + Z);
+    float cy = Y / (X + Y + Z);
+
+    if (isnan(cx)) {
+        cx = 0.0f;
+    }
+
+    if (isnan(cy)) {
+        cy = 0.0f;
+    }
+
+    return this->setGroupColorXy(id, cx, cy);
+}
