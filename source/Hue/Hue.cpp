@@ -207,3 +207,33 @@ bool Hue::setGroupColorRgb(char *id, double red, double green, double blue) {
 
     return this->setGroupColorXy(id, cx, cy);
 }
+
+bool Hue::setBrightness(char * id, int brightness) {
+    HttpResponse * response = NULL;
+    char url[100];
+    sprintf(url, "http://%s/api/%s/lights/%s/state", this->ip, this->user, id);
+
+    char json[100];
+    sprintf(json, "{\"bri\":%d}", brightness);
+    response = mHttpClient->put(url, json);
+
+    bool success = response->statuscode == 200;
+    delete response;
+
+    return success;
+}
+
+bool Hue::setGroupBrightness(char * id, int brightness) {
+    HttpResponse * response = NULL;
+    char url[100];
+    sprintf(url, "http://%s/api/%s/groups/%s/action", this->ip, this->user, id);
+
+    char json[100];
+    sprintf(json, "{\"bri\":%d}", brightness);
+    response = mHttpClient->put(url, json);
+
+    bool success = response->statuscode == 200;
+    delete response;
+
+    return success;
+}
