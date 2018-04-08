@@ -8,14 +8,29 @@
 #include <cJson.h>
 #include <vector>
 
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+
 using namespace std;
+
+const int TOPSCREEN_WIDTH = 400;
+const int BOTTOMSCREEN_WIDTH = 340;
+const int SCREEN_HEIGHT = 240;
+const int SCREEN_BPP = 16;
 
 int main(int argc, char **argv)
 {
-	gfxInitDefault();
+	bool isRunning = true;
+	SDL_Surface *screen = NULL;
+	SDL_Event event;
+
+	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+		return 1;
+	}
+
+	int screenFlags = SDL_SWSURFACE | SDL_BOTTOMSCR | SDL_CONSOLETOP;
+	screen = SDL_SetVideoMode(BOTTOMSCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, screenFlags);
 	httpcInit(4 * 1024 * 1024); 
-	//Initialize console on top screen. Using NULL as the second argument tells the console library to use the internal console structure as current one
-	consoleInit(GFX_TOP, NULL);
 
 	Hue *hue = new Hue();
 	hue->discoverByNupnp();
@@ -31,53 +46,26 @@ int main(int argc, char **argv)
 	printf("name %s \n", groups->at(1).name);
 
 	// Main loop
-	while (aptMainLoop())
+	while (aptMainLoop() && isRunning)
 	{	
 		//Scan all the inputs. This should be done once for each frame
-		hidScanInput();
-		
-		//hidKeysDown returns information about which buttons have been just pressed (and they weren't in the previous frame)
-		u32 kDown = hidKeysDown();
+		while(SDL_PollEvent(&event))
+        {
+            switch(event.type)
+            {
+				case SDL_KEYDOWN:
+					if(event.key.keysym.sym == SDLK_RETURN) { // Start
+						isRunning = false;
+					}
+					break;
+            }
+        }
 
-		if (kDown & KEY_START) break; // break in order to return to hbmenu
+		// Do something here...
 
-		if (kDown & KEY_LEFT) {
-			currentLight --;
-			if(currentLight < 0) {
-				currentLight = lights->size()-1;
-			}
-			light = lights->at(currentLight);
-			light.print();
-		}
-		if (kDown & KEY_RIGHT) {
-			currentLight ++;
-			if(currentLight == lights->size()) {
-				currentLight = 0;
-			}
-			light = lights->at(currentLight);
-			light.print();
-		}
-		if (kDown & KEY_X) {
-			hue->setGroupBrightness(groups->at(0).id, 254);
-		}
-		if (kDown & KEY_Y) {
-			hue->setGroupBrightness(groups->at(0).id, 60);
-		}
-		if (kDown & KEY_A) {
-			hue->setGroupOnState(groups->at(0).id, true);
-		}
-		if (kDown & KEY_B) {
-			hue->setGroupOnState(groups->at(0).id, false);
-		}
-
-		// Flush and swap framebuffers
-		gfxFlushBuffers();
-		gfxSwapBuffers();
-
-		//Wait for VBlank
-		gspWaitForVBlank();
+		SDL_Flip(screen);
 	}
 
-	gfxExit();
+	SDL_Quit();
 	return 0;
 }

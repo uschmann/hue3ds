@@ -22,3 +22,8 @@ http://192.168.1.204/api/qzkfZoi7znr4dpoMz876XW6Oz2LzBfjhVVqWLVGa/lights
 
 PUT http://192.168.1.204/api/qzkfZoi7znr4dpoMz876XW6Oz2LzBfjhVVqWLVGa/lights/6/state
 {"on":true, "sat":254, "bri":254,"hue":10000}
+
+
+SOURCES		:=	source source/Hue source/HttpClient
+DATA		:=	data
+INCLUDES	:=	include include/HttpClient include/source
