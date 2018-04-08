@@ -7,9 +7,10 @@
 
 class Controller {
     public:
-        void onCreate(App * app);
-        void onEvent(SDL_Event * event);
-        void onDraw(SDL_Surface *screen);
+        virtual void onCreate(App * app);
+        virtual void onEvent(SDL_Event * event);
+        virtual void onDraw(SDL_Surface *screen);
+        virtual void onRemove();
     protected:
         App * app;
 };

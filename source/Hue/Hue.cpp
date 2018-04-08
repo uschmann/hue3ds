@@ -26,8 +26,8 @@ char * Hue::discoverByNupnp() {
 
     cJSON *bridge = cJSON_GetArrayItem(json, 0);
     cJSON *internalipaddress = cJSON_GetObjectItem(bridge, "internalipaddress");
-    this->ip = cJSON_GetStringValue(internalipaddress);
-    
+    this->ip = cJSON_GetStringValue(internalipaddress);    
+
     delete response;
     cJSON_free(json);
 
@@ -60,7 +60,7 @@ char * Hue::registerUser() {
 
 vector<Light> * Hue::getLights() {
     vector<Light> * lights = new vector<Light>;
-
+    
     char url[100];
     sprintf(url, "http://%s/api/%s/lights", this->ip, this->user);
     HttpResponse * response = mHttpClient->get(url);

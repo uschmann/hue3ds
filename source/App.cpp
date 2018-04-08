@@ -11,14 +11,11 @@ App *App::INSTANCE = 0;
 const int TOPSCREEN_WIDTH = 400;
 const int BOTTOMSCREEN_WIDTH = 340;
 const int SCREEN_HEIGHT = 240;
-const int SCREEN_BPP = 16;
+const int SCREEN_BPP = 32;
 
 App::App() {
     this->isRunning = false;
     this->hue = new Hue();
-
-	hue->discoverByNupnp();
-	hue->setUser(FileSystem::readTextFile("hue.txt"));
 }
 
 App * App::getInstance() {
@@ -34,6 +31,9 @@ void App::init() {
     int screenFlags = SDL_SWSURFACE | SDL_BOTTOMSCR | SDL_CONSOLETOP;
 	this->screen = SDL_SetVideoMode(BOTTOMSCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, screenFlags);
 	httpcInit(4 * 1024 * 1024); 
+
+	this->hue->discoverByNupnp();
+	this->hue->setUser(FileSystem::readTextFile("hue.txt"));
 }
 
 void App::run() {
@@ -67,6 +67,11 @@ void App::run() {
 }
 
 void App::startController(Controller * controller) {
+    if(this->controller != NULL) {
+        this->controller->onRemove();
+        delete this->controller;
+    }
+    
     this->controller = controller;
     this->controller->onCreate(this);
     this->controller->onDraw(this->screen);
