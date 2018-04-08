@@ -29,9 +29,9 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source source/Hue source/HttpClient
+SOURCES		:=	source source/Hue source/HttpClient source/View source/SdlGfx source/Controller
 #DATA		:=	data
-INCLUDES	:=	include include/HttpClient include/source
+INCLUDES	:=	include include/HttpClient include/source source/View include/SdlGfx include/Controller
 ROMFS		:=	data
 
 #---------------------------------------------------------------------------------
