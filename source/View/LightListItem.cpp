@@ -14,10 +14,10 @@ LightListItem::LightListItem(Light * light, int x, int y, int width, int height)
 
 void LightListItem::draw(SDL_Surface * screen) {
     bool isOn = this->light->state->on;
-    //ColorRgb * color = ColorRgb::fromXy(this->light->state->colorX, this->light->state->colorY, 1);
+    ColorRgb * color = ColorRgb::fromXy(this->light->state->colorX, this->light->state->colorY, 1.f);
 
     if(isOn) {
-        //boxRGBA(screen, this->x, this->y, this->x + this->width, this->y + this->height, color->r, color->g, color->b, 0xFF);    
+        boxRGBA(screen, this->x, this->y, this->x + this->width, this->y + this->height, color->r, color->g, color->b, 0xFF);    
     }
     else {
         boxColor(screen, this->x, this->y, this->x + this->width, this->y + this->height, 0x000000FF);    
@@ -33,6 +33,8 @@ bool LightListItem::handleEvent(SDL_Event * event) {
     {
         case SDL_USEREVENT:
             if(event->user.code == TAP_EVENT && this->isClicked((SDL_MouseButtonEvent*)event->user.data1)) {
+                ColorRgb * color = ColorRgb::fromXy(this->light->state->colorX, this->light->state->colorY, this->light->state->bri / 254);
+                printf("r: %u, g:%u, b%u", color->r, color->g, color->b);
                 this->light->state->on = !this->light->state->on;
                 App::getInstance()->hue->setOnState(this->light->id, this->light->state->on);
             }

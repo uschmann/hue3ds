@@ -1,5 +1,5 @@
 ColorRgb.o: \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/HttpClient/ColorRgb.cpp \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/Hue/ColorRgb.cpp \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_main.h \
