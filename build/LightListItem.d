@@ -112,7 +112,8 @@ LightListItem.o: \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpResponse.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Event.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Event.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h
 
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h:
 
@@ -339,3 +340,5 @@ LightListItem.o: \
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Event.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h:

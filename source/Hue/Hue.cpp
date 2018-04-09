@@ -237,3 +237,4 @@ bool Hue::setGroupBrightness(char * id, int brightness) {
 
     return success;
 }
+
