@@ -18,6 +18,7 @@ class App {
         static App * INSTANCE; 
         SDL_Surface *screen;
         bool isRunning;
+        Uint32 lastMouseDown;
         Controller * controller;
 };
 

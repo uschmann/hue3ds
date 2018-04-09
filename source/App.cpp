@@ -5,6 +5,8 @@
 #include <App.h>
 #include <FileSystem.h>
 #include <Controller/Controller.h>
+#include <Event.h>
+
 
 App *App::INSTANCE = 0;
 
@@ -48,6 +50,22 @@ void App::run() {
         {
             switch(event.type)
             {
+                case SDL_MOUSEBUTTONDOWN:
+                    this->lastMouseDown = SDL_GetTicks();
+                    break;
+                case SDL_MOUSEBUTTONUP:
+                    if((SDL_GetTicks() - this->lastMouseDown) < 150) {
+                        SDL_MouseButtonEvent mouseEvent;
+                        mouseEvent.x = event.button.x;
+                        mouseEvent.y = event.button.y;
+
+                        SDL_Event event;
+                        event.type = SDL_USEREVENT;
+                        event.user.code = TAP_EVENT;
+                        event.user.data1 = &mouseEvent;;
+                        SDL_PushEvent(&event);
+                    }
+                    break;
 				case SDL_KEYDOWN:
 					if(event.key.keysym.sym == SDLK_RETURN) { // Start
 						this->isRunning = false;

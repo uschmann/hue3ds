@@ -5,7 +5,8 @@ void Controller::onCreate(App * app) {
     this->app = app;
 }
 
-void Controller::onEvent(SDL_Event * event) {
+bool Controller::onEvent(SDL_Event * event) {
+    return false;
 }
 
 void Controller::onDraw(SDL_Surface *screen) {

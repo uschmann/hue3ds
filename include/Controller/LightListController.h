@@ -12,12 +12,14 @@ using namespace std;
 class LightListController: public Controller {
     public:
         void onCreate(App * app);
-        void onEvent(SDL_Event * event);
+        bool onEvent(SDL_Event * event);
         void onDraw(SDL_Surface *screen);
         void onRemove();
     protected:
         vector<Light> * lights;
-        vector<LightListItem> * lightListItems;
+        vector<LightListItem *> * lightListItems;
+        int offsetY;
+        bool isDragging;
 };
 
 #endif

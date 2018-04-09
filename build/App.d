@@ -108,7 +108,8 @@ App.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/App.cpp \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Event.h
 
 /Users/andreuschmann/devkitPro/libctru/include/3ds.h:
 
@@ -329,3 +330,5 @@ App.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/App.cpp \
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/FileSystem.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Event.h:

@@ -1,9 +1,9 @@
 #include <SDL/SDL.h>
 #include <SdlGfx/SDL_gfxPrimitives.h>
 #include <View/LightListItem.h>
-# include <App.h>
-
+#include <App.h>
 #include <stdio.h>
+#include <Event.h>
 
 LightListItem::LightListItem(Light * light, int x, int y, int width, int height) 
 : View(x, y, width, height)
@@ -24,8 +24,8 @@ void LightListItem::draw(SDL_Surface * screen) {
 bool LightListItem::handleEvent(SDL_Event * event) {
     switch(event->type)
     {
-        case SDL_MOUSEBUTTONDOWN:
-            if(this->isClicked(&event->button)) {
+        case SDL_USEREVENT:
+            if(event->user.code == TAP_EVENT && this->isClicked((SDL_MouseButtonEvent*)event->user.data1)) {
                 this->light->state->on = !this->light->state->on;
                 App::getInstance()->hue->setOnState(this->light->id, this->light->state->on);
             }

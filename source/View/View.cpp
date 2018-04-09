@@ -29,3 +29,11 @@ bool View::isClicked(SDL_MouseButtonEvent * event) {
     return event->x >= this-> x && event->x <= this->x + this->width &&
         event->y >= this->y && event->y <= this->y + this->height;
 }
+
+void View::setY(int y) {
+    this->y = y;
+}
+
+void View::setX(int x) {
+    this->x = x;
+}
