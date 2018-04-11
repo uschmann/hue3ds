@@ -3,12 +3,14 @@
 
 #include <Hue/Hue.h>
 #include <SDL/SDL.h>
+#include <AssetManager.h>
 
 class Controller;
 
 class App {
     public:
         Hue * hue;
+        AssetManager * assetManager;
         static App *getInstance();
         void init();
         void startController(Controller * controller);

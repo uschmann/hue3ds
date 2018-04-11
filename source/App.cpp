@@ -6,18 +6,16 @@
 #include <FileSystem.h>
 #include <Controller/Controller.h>
 #include <Event.h>
-
+#include <Screen.h>
 
 App *App::INSTANCE = 0;
 
-const int TOPSCREEN_WIDTH = 400;
-const int BOTTOMSCREEN_WIDTH = 340;
-const int SCREEN_HEIGHT = 240;
-const int SCREEN_BPP = 32;
+
 
 App::App() {
     this->isRunning = false;
     this->hue = new Hue();
+    this->assetManager = new AssetManager();
 }
 
 App * App::getInstance() {
@@ -33,7 +31,11 @@ void App::init() {
     
     int screenFlags = SDL_SWSURFACE | SDL_BOTTOMSCR | SDL_CONSOLETOP;
 	this->screen = SDL_SetVideoMode(BOTTOMSCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, screenFlags);
-	httpcInit(4 * 1024 * 1024); 
+	
+    httpcInit(4 * 1024 * 1024); 
+    romfsInit();
+    
+    this->assetManager->init();
 
 	this->hue->discoverByNupnp();
 	this->hue->setUser(FileSystem::readTextFile("hue.txt"));

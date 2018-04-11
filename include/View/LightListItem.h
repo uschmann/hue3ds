@@ -5,6 +5,7 @@
 
 #include "View.h"
 #include <Hue/Light.h>
+#include <Hue/ColorRgb.h>
 
 class LightListItem: public View {
     public:
@@ -13,6 +14,7 @@ class LightListItem: public View {
         bool handleEvent(SDL_Event * event);
     protected:
         Light * light;
+        ColorRgb * color;
 };
 
 #endif

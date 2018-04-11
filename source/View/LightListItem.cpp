@@ -5,20 +5,21 @@
 #include <stdio.h>
 #include <Event.h>
 #include <Hue/ColorRgb.h>
+#include <Controller/LightColorController.h>
 
 LightListItem::LightListItem(Light * light, int x, int y, int width, int height) 
 : View(x, y, width, height)
 {
     this->light = light;
+    this->color = ColorRgb::fromXy(this->light->state->colorX, this->light->state->colorY, ((float)this->light->state->bri / 254.f)); 
 }
 
 void LightListItem::draw(SDL_Surface * screen) {
     bool isOn = this->light->state->on;
-    //ColorRgb * color = ColorRgb::fromXy(this->light->state->colorX, this->light->state->colorY, 1.f);
 
     if(isOn) {
-        //boxRGBA(screen, this->x, this->y, this->x + this->width, this->y + this->height, color->r, color->g, color->b, 0xFF);    
-        boxColor(screen, this->x, this->y, this->x + this->width, this->y + this->height, 0x333333FF);   
+        boxRGBA(screen, this->x, this->y, this->x + this->width, this->y + this->height, this->color->r, this->color->g, this->color->b, 254);    
+        //boxColor(screen, this->x, this->y, this->x + this->width, this->y + this->height, 0x333333FF);   
     }
     else {
         boxColor(screen, this->x, this->y, this->x + this->width, this->y + this->height, 0x000000FF);    
@@ -34,8 +35,13 @@ bool LightListItem::handleEvent(SDL_Event * event) {
     {
         case SDL_USEREVENT:
             if(event->user.code == TAP_EVENT && this->isClicked((SDL_MouseButtonEvent*)event->user.data1)) {
-                this->light->state->on = !this->light->state->on;
-                App::getInstance()->hue->setOnState(this->light->id, this->light->state->on);
+                if(((SDL_MouseButtonEvent*)event->user.data1)->x < 100) {
+                    this->light->state->on = !this->light->state->on;
+                    App::getInstance()->hue->setOnState(this->light->id, this->light->state->on);
+                }
+                else {
+                    App::getInstance()->startController(new LightColorController(this->light));
+                }
             }
             break;
     }

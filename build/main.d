@@ -107,11 +107,16 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_loadso.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_timer.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_version.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/AssetManager.h \
+ /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_image.h \
+ /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightListController.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/LightListItem.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/App.h:
 
@@ -329,6 +334,12 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
 
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_version.h:
 
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/AssetManager.h:
+
+/Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_image.h:
+
+/Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h:
+
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightListController.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h:
@@ -338,3 +349,7 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/LightListItem.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h:
