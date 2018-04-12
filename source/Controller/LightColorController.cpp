@@ -30,6 +30,8 @@ bool LightColorController::onEvent(SDL_Event * event) {
                 Uint8 b;
                 this->colorPicker->getColor(&r, &g, &b);
 
+                App::getInstance()->hue->setColorRgb(this->light->id, r, g, b);
+
                 printf("R: %d, G: %d, B: %d\n", r, g, b);
             }
             break;

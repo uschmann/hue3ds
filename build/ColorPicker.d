@@ -112,7 +112,8 @@ ColorPicker.o: \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/AssetManager.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_image.h \
- /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h
+ /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/SdlGfx/SDL_gfxPrimitives.h
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h:
 
@@ -339,3 +340,5 @@ ColorPicker.o: \
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_image.h:
 
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/SdlGfx/SDL_gfxPrimitives.h:

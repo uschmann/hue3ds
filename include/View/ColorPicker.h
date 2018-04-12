@@ -19,6 +19,8 @@ class ColorPicker: public View {
         Uint8 g;
         Uint8 b;
         SDL_Surface * background;
+        int lastX;
+        int lastY;
 };
 
 #endif
