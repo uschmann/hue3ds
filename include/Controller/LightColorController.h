@@ -5,7 +5,7 @@
 #include <Hue/Light.h>
 #include <View/LightListItem.h>
 #include <vector>
-
+#include <View/ColorPicker.h>
 
 using namespace std;
 
@@ -18,6 +18,7 @@ class LightColorController: public Controller {
         void onRemove();
     protected:
         Light * light;
+        ColorPicker * colorPicker;
 };
 
 #endif

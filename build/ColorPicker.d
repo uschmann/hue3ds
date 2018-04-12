@@ -1,11 +1,6 @@
-LightColorController.o: \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/Controller/LightColorController.cpp \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/state.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJSON.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h \
+ColorPicker.o: \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/View/ColorPicker.cpp \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_main.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_stdinc.h \
@@ -32,6 +27,7 @@ LightColorController.o: \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_loadso.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_timer.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_version.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/App.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Hue.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpClient.h \
@@ -110,28 +106,15 @@ LightColorController.o: \
  /Users/andreuschmann/devkitPro/libctru/include/3ds/font.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/HttpClient/HttpResponse.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/state.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJSON.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/AssetManager.h \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_image.h \
- /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/LightListItem.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightListController.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Screen.h
+ /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h
 
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/state.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJSON.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h:
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h:
 
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h:
 
@@ -184,6 +167,8 @@ LightColorController.o: \
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_timer.h:
 
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_version.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/App.h:
 
@@ -341,6 +326,12 @@ LightColorController.o: \
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Light.h:
 
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/state.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJSON.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/cJson.h:
+
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/Group.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/AssetManager.h:
@@ -348,15 +339,3 @@ LightColorController.o: \
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL_image.h:
 
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/LightListItem.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightListController.h:
-
-/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Screen.h:

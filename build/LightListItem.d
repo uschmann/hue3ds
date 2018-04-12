@@ -118,7 +118,8 @@ LightListItem.o: \
  /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Event.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h
 
 /Users/andreuschmann/devkitPro/portlibs/3ds/include/SDL/SDL.h:
 
@@ -357,3 +358,5 @@ LightListItem.o: \
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/Controller.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h:

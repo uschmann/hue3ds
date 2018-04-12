@@ -116,7 +116,8 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/LightListItem.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/View.h \
  /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h \
- /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h \
+ /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/App.h:
 
@@ -353,3 +354,5 @@ main.o: /Users/andreuschmann/homebrew/3ds/projects/hue3ds/source/main.cpp \
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Hue/ColorRgb.h:
 
 /Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/Controller/LightColorController.h:
+
+/Users/andreuschmann/homebrew/3ds/projects/hue3ds/include/View/ColorPicker.h:
